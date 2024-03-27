@@ -1,0 +1,21 @@
+{
+    "name": "h22k/logma",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "H22k\\Logma\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "H22k\\Logma\\Tests": "tests"
+        }
+    },
+    "authors": [
+        {
+            "name": "Halil Hakan Karabay",
+            "email": "hakankarabay@icloud.com"
+        }
+    ],
+    "require": {}
+}
