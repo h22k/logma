@@ -192,4 +192,7 @@ vendor
 # php-cs-fixer
 .php-cs-fixer.cache
 
+# testing data
+storage
+
 # End of https://www.toptal.com/developers/gitignore/api/phpstorm,phpstorm+iml,phpunit
