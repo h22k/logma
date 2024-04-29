@@ -1,5 +1,6 @@
 {
     "name": "h22k/logma",
+    "description": "Basic logging library for small projects",
     "type": "library",
     "minimum-stability": "dev",
     "autoload": {
