@@ -1,0 +1,22 @@
+name: stan
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  stan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: shivammathur/setup-php@v2
+        with:
+          tools: composer
+          php-version: '8.3'
+
+      - name: composer install
+        run: composer install
+
+      - name: phpunit
+        run: composer test
