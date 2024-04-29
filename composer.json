@@ -20,7 +20,9 @@
     ],
     "scripts": {
         "fixer": "@php vendor/bin/php-cs-fixer fix",
-        "phpstan": "@php vendor/bin/phpstan analyse"
+        "phpstan": "@php vendor/bin/phpstan analyse",
+        "test": "@php vendor/bin/phpunit tests/Unit",
+        "test-detail": "@php vendor/bin/phpunit --colors --testdox --display-warnings tests/Unit"
     },
     "require": {
         "psr/log": "^3.0"
