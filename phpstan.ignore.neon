@@ -1,0 +1,10 @@
+parameters:
+	ignoreErrors:
+		-
+		    messages:
+		        - '#Property (.*) does not accept null\.#'
+		        - '#Left side of (.*)#'
+		    path: src/Resource/StreamResource.php
+		-
+		    message: '#Parameter (.*)#'
+		    path: tests/Unit/LogmaTest.php
