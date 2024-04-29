@@ -1,4 +1,4 @@
-name: stan
+name: testing
 on:
   push:
     branches:
@@ -10,13 +10,14 @@ jobs:
   stan:
     runs-on: ubuntu-latest
     steps:
-      - uses: shivammathur/setup-php@v2
-        with:
-          tools: composer
-          php-version: '8.3'
+      - uses: action/checkout@v3
 
-      - name: composer install
+      - name: Install project dependencies
+        working-directory: ./
         run: composer install
 
-      - name: phpunit
-        run: composer test
+      - name: Running PHPStan
+        run: composer run phpstan
+
+      - name: Running tests
+        run: composer run test
