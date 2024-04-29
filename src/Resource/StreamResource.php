@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace H22k\Logma\Resource;
 
 use H22k\Logma\Exception\LogmaInvalidFileNameException;
+use H22k\Logma\Exception\LogmaStreamIsNotWriteableException;
 use H22k\Logma\Exception\LogmaStreamOpenException;
 use H22k\Logma\LogRecord;
 
@@ -50,10 +51,6 @@ class StreamResource
 
     public function is(string $extension): bool
     {
-        if ('' === $this->getFileExtension()) {
-            return false;
-        }
-
         return $this->getFileExtension() === $extension;
     }
 
@@ -62,21 +59,21 @@ class StreamResource
         return $this->fileExtension;
     }
 
-    protected function isFileEmpty(): bool
-    {
-        clearstatcache();
-
-        return 0 === filesize($this->streamPath);
-    }
-
     /**
      * @return resource
      *
-     * @throws LogmaStreamOpenException
+     * @throws LogmaStreamIsNotWriteableException|LogmaStreamOpenException
      */
     private function openStream()
     {
-        $stream = fopen($this->streamPath, 'a+');
+        if (!str_starts_with($this->streamPath, 'php://')
+            && file_exists($this->streamPath)
+            && !is_writable($this->streamPath)
+        ) {
+            throw new LogmaStreamIsNotWriteableException($this->streamPath);
+        }
+
+        $stream = @fopen($this->streamPath, 'a+');
 
         if (false === $stream) {
             throw new LogmaStreamOpenException($this->streamPath);
