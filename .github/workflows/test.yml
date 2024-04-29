@@ -10,14 +10,20 @@ jobs:
   stan:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Install project dependencies
+      - uses: php-actions/composer@v6
+        with:
+          php_version: 8.3
+          memory_limit: -1
+          php_extensions: intl zip gd
+
+      - name: Install dependencies
         working-directory: ./
         run: composer install
 
-      - name: Running PHPStan
+      - name: Run PHPStan
         run: composer run phpstan
 
-      - name: Running tests
+      - name: Run tests
         run: composer run test
