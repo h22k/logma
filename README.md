@@ -8,6 +8,8 @@
 
 Logma is a simple logging tool. It's name coming from combination of Turkish word _Lokma_ and _log_.
 
+## Install
+`composer require h22k/logma`
 
 ## Usage/Examples
 TODO: More examples will be added.
