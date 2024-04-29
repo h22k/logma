@@ -17,12 +17,6 @@ jobs:
         with:
           php-version: '8.3'
 
-      - name: Setup composer
-        uses: php-actions/composer@v6
-        with:
-          php_version: 8.3
-          memory_limit: -1
-
       - name: Install dependencies
         working-directory: ./
         run: composer install
