@@ -15,6 +15,7 @@ return (new Config())
         '@PhpCsFixer' => true,
         '@PHP83Migration' => true,
         'global_namespace_import' => true,
+        'php_unit_internal_class' => false,
     ])
     ->setFinder($finder)
 ;

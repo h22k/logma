@@ -10,14 +10,11 @@ use Generator;
 use H22k\Logma\Formatter\Formatter;
 use H22k\Logma\Log;
 use H22k\Logma\LogLevel;
+use PHPUnit\Framework\Attributes\CoversNothing;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @internal
- *
- * @coversNothing
- */
+#[CoversNothing]
 abstract class FormatterTestCase extends TestCase
 {
     protected const string LOG_MESSAGE = 'message';

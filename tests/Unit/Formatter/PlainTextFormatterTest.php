@@ -9,11 +9,6 @@ use H22k\Logma\Formatter\PlainTextFormatter;
 use H22k\Logma\Log;
 use PHPUnit\Framework\Attributes\CoversNothing;
 
-/**
- * @internal
- *
- * @coversNothing
- */
 #[CoversNothing]
 class PlainTextFormatterTest extends FormatterTestCase
 {
