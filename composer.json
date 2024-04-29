@@ -1,5 +1,6 @@
 {
     "name": "h22k/logma",
+    "license": "MIT",
     "version": "0.0.1",
     "description": "Basic logging library for small projects",
     "type": "library",
